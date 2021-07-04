@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Head.css';
 
+
 class Head extends Component {
   // constructor(props){
     // super(props);
@@ -18,7 +19,7 @@ class Head extends Component {
 
   render() {
     return (
-      <div></div>
+      <div>Qué te den por ahí</div>
     );
   }
 }
