@@ -2,6 +2,7 @@ form{
     padding: 60px;
     max-width: 400px;
     background-color: #E7E7E7;
+    background:#7392b7;
     margin: 0 auto;
   }
 
@@ -14,14 +15,15 @@ form input, form textarea{
     -webkit-box-sizing: border-box;
     box-sizing: border-box; 
     border: none; 
-    color: #525c66; 
+    color:#c5d5ea; 
     font-size: 1em;
     resize: horizontal; 
     align-content: center;
   }
 
+
   
 button:hover{
-	background-color: thistle;
+	background-color: #b3c5d7;
 }
 textarea { resize: none; }

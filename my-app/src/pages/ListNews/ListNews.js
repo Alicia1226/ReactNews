@@ -1,25 +1,45 @@
 import React, { Component } from 'react';
-import './ListNews.css';
+import Card from './Card';
+import './ListNews.scss';
+import axios from "axios";
+const apiKey= process.env.REACT_APP_API_KEY;
+
 
 class ListNews extends Component {
-  // constructor(props){
-    // super(props);
-    // this.state = {};
-  // }
+  constructor(props){
+    super(props);
+    this.state = {
+     news: []
+    };
+  }
 
-  // componentWillMount(){}
-  // componentDidMount(){}
-  // componentWillUnmount(){}
+  async componentDidMount() {
+  const URL = `https://newsapi.org/v2/top-headlines?country=de&apiKey=${apiKey}`
+  let res = await axios.get(URL)
+  let data = res.data;
+  await this.setState({ news: res.data.articles.slice(0,5) });
 
-  // componentWillReceiveProps(){}
-  // shouldComponentUpdate(){}
-  // componentWillUpdate(){}
-  // componentDidUpdate(){}
+  console.log(data)
+  };
 
+  removeNews = (i) => {
+    let filteredArray = this.state.news.filter((_, j) => i !== j);
+    this.setState({ news: filteredArray });
+  };
+
+  renderNews = () => {
+  if(this.state.news.length>0){
+
+    return this.state.news.map((news, i) => (
+      <Card news={news} key={i} remove={() => this.removeNews(i)} />
+    ))
+    }else{
+      return null;
+    }
+  }
+  
   render() {
-    return (
-      <div></div>
-    );
+    return <section>{this.renderNews()}</section>
   }
 }
 

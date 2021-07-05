@@ -1,27 +1,31 @@
-import React, { Component } from 'react';
-import './Head.css';
+import React, { Component } from "react";
+import Nav from "../Nav/Nav";
+import "./Head.scss";
 
+import {userContext} from '../../Context/userContext';
 
-class Head extends Component {
-  // constructor(props){
-    // super(props);
-    // this.state = {};
-  // }
-
-  // componentWillMount(){}
-  // componentDidMount(){}
-  // componentWillUnmount(){}
-
-  // componentWillReceiveProps(){}
-  // shouldComponentUpdate(){}
-  // componentWillUpdate(){}
-  // componentDidUpdate(){}
-
+export default class Head extends Component {
   render() {
     return (
-      <div>Qué te den por ahí</div>
+      <header className="Head">
+        <div className="wrapper">
+          <h1>NewsToday</h1>
+            <Nav />
+            <br />
+
+
+            <userContext.Consumer>
+            {({user,logoutUser}) => 
+                <>
+                  <p>User: {user.name}</p>
+
+                </>
+            }
+            </userContext.Consumer>
+            
+            
+        </div>
+      </header>
     );
   }
 }
-
-export default Head;

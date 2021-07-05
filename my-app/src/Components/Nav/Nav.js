@@ -1,20 +1,19 @@
-
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import "./Nav.css";
+import "./Nav.scss";
 
 function Nav() {
   return (
 <nav className="Nav">
       <ul className="Nav__list">
         <li className="Nav__listItem">
-          <Link className="Nav__Link" to="/Home">Inicio</Link>
+          <Link className="Nav__Link" to="/home">Inicio</Link>
         </li>
         <li>
-          <Link to="/Form">Crear noticia</Link>
+          <Link to="/form">Crear noticia</Link>
         </li>
         <li>
-          <Link to="/ListNews">Lista noticias</Link>
+          <Link to="/listNews">Lista noticias</Link>
         </li>
       </ul>
     </nav>

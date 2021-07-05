@@ -6,35 +6,39 @@ import Main from "./Components/Main";
 import Footer from "./Components/Footer";
 import { userContext } from "./Context/userContext";
 
+
 export class App extends Component {
   constructor(props) {
-    super(props);
-
+    super(props)
+  
     this.state = {
-      user: { name: "Alicia" },
-    };
+      user: {
+        name:""
+      }
+    }
   }
-
-  login = (name) => this.setState({ user: name });
+  
+  login = (name) => this.setState({user:{name}});
+  
 
   render() {
     const value = {
       user: this.state.user,
-      loginUser: this.login,
-    };
+      loginUser: this.login
+    }
 
     return (
-      <div className='App'>
+      <div className="App">
         <BrowserRouter>
           <userContext.Provider value={value}>
-            <Head />
-            <Main />
+            <Head/>
+            <Main/>
           </userContext.Provider>
         </BrowserRouter>
-        <Footer />
+        <Footer/>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

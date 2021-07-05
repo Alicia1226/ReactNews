@@ -2,39 +2,22 @@ import React, { Component } from 'react';
 import './Form.scss';
 
 class Form extends Component {
-  // constructor(props){
-    // super(props);
-    // this.state = {};
-  // }
-
-  // componentWillMount(){}
-  // componentDidMount(){}
-  // componentWillUnmount(){}
-
-  // componentWillReceiveProps(){}
-  // shouldComponentUpdate(){}
-  // componentWillUpdate(){}
-  // componentDidUpdate(){}
-
+  constructor(props){
+    super(props);
+    this.state = {};
+  }
+  
   render() {
     return (
     
       <div className="Form">
-        <h2>Creación noticia</h2>
   
-        <form className="Form" >
+        <form >
+          <input type="text" placeholder="Título" id="title" name="title" />
           
-          <input type="text" placeholder="Autor de la noticia" id="name" name="name" />
+          <input type="text" placeholder="Imagen" id="img" name="img" />
   
-      
-          <input type="text" placeholder="Fecha de publicación" id="date" name="date" />
-  
-          
-          <input type="text" placeholder="Titular" id="title" name="title" />
-          
-  
-          <textarea name="textarea" rows="10" cols="40">Escribe aquí la noticia</textarea>
-          {/* <input type="text" placeholder="Escribe tu noticia" id="news" name="news" /> */}
+          <textarea name="textarea" rows="10" cols="40" placeholder="Escribe aquí la noticia"></textarea>
   
           <button id='enviar' name="enviar" type="submit" class="btn">Cargar noticia</button>
         </form>
